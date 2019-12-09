@@ -1,9 +1,9 @@
-package personal.abdulmughniaf.androidpractice
+package personal.abdulmughniaf.androidpractice.models
 
 data class Task @JvmOverloads constructor(
-    var title: String,
-    val todo: MutableList<Todo> = mutableListOf(),
-    var tag: Tag? = null
+        var title: String,
+        val todo: MutableList<Todo> = mutableListOf(),
+        var tag: Tag? = null
 )
 
 data class Todo(
