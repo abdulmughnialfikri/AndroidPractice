@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">AndroidPractice</string>
+
+    <string name="title_activity_navigation">NavigationActivity</string>
+    <string name="title_task">Task</string>
+    <string name="title_notes">Notes</string>
+</resources>
