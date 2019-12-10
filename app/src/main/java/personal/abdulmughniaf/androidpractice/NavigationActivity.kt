@@ -8,8 +8,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.Navigation
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.NavigationUI
-import personal.abdulmughniaf.androidpractice.models.Tag
-import personal.abdulmughniaf.androidpractice.models.Task
 
 class NavigationActivity : AppCompatActivity() {
 
