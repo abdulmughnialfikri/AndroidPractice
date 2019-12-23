@@ -18,7 +18,9 @@ class TaskAdapter (
 
     class ViewHolder(view: View): BaseViewHolder<Task>(view){
         override fun onBind(data: Task) {
-            view.titleTask.text = data.title
+            view.titleView.text = data.title
+
+            LayoutInflater.from(view.context).inflate(R.layout.view_todo, view.todoContainer, false)
         }
 
     }
