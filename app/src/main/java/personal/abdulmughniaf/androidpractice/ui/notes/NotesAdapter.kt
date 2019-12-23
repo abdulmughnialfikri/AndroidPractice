@@ -4,10 +4,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import kotlinx.android.synthetic.main.item_notes.view.*
 import personal.abdulmughniaf.androidpractice.R
 import personal.abdulmughniaf.androidpractice.foundation.BaseRecyclerAdapter
 import personal.abdulmughniaf.androidpractice.models.Note
+import personal.abdulmughniaf.androidpractice.view.NoteView
 
 class NotesAdapter(
         noteList: MutableList<Note> = mutableListOf()
@@ -17,7 +17,7 @@ class NotesAdapter(
 
     class ViewHolder(view: View): BaseViewHolder<Note>(view){
         override fun onBind(data: Note) {
-            view.titleNotes.text = data.description
+            (view as NoteView).initView(data)
         }
 
     }
