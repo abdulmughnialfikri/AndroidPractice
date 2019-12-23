@@ -33,9 +33,9 @@ class NotesFragment : Fragment() {
 
         recyclerView.layoutManager = LinearLayoutManager(context)
         val adapter = NotesAdapter(mutableListOf(
-                Note("Note 1 Description"),
-                Note("Note 2 Description"),
-                Note("Note 3 Description")
+                Note("Don't forget to take laundry"),
+                Note("Go to groceries"),
+                Note("Go jogging")
         ))
         recyclerView.adapter = adapter
     }
