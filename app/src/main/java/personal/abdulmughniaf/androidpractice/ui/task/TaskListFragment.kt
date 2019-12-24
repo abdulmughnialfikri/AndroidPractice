@@ -59,8 +59,9 @@ class TaskListFragment : Fragment() {
         recyclerView.adapter = adapter
     }
     interface TouchActionDelegate{
-        fun onAddButtonClicked()
+        fun onAddButtonClicked(value: String)
     }
+
     companion object{
         fun newInstance() = TaskListFragment()
     }

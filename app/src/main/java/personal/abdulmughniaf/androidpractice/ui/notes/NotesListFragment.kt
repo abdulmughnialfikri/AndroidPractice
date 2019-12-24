@@ -1,5 +1,6 @@
 package personal.abdulmughniaf.androidpractice.ui.notes
 
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -16,10 +17,21 @@ import kotlinx.android.synthetic.main.fragment_task.recyclerView
 
 import personal.abdulmughniaf.androidpractice.R
 import personal.abdulmughniaf.androidpractice.models.Note
+import personal.abdulmughniaf.androidpractice.ui.task.TaskListFragment
 
 class NotesListFragment : Fragment() {
 
     private var notesViewModel: NotesViewModel? = null
+    lateinit var touchActionDelegate: TouchActionDelegate
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        context?.let {
+            if (it is TouchActionDelegate){
+                touchActionDelegate =it
+            }
+        }
+    }
 
     override fun onCreateView(inflater: LayoutInflater,
                               container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -36,7 +48,11 @@ class NotesListFragment : Fragment() {
                 Note("Don't forget to take laundry"),
                 Note("Go to groceries"),
                 Note("Go jogging")
-        ))
+        ), touchActionDelegate)
         recyclerView.adapter = adapter
+    }
+
+    interface TouchActionDelegate{
+        fun onAddButtonClicked(value: String)
     }
 }

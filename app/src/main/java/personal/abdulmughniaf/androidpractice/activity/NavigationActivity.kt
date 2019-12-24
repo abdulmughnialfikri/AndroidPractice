@@ -10,9 +10,10 @@ import androidx.navigation.Navigation
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.NavigationUI
 import personal.abdulmughniaf.androidpractice.R
+import personal.abdulmughniaf.androidpractice.ui.notes.NotesListFragment
 import personal.abdulmughniaf.androidpractice.ui.task.TaskListFragment
 
-class NavigationActivity : AppCompatActivity(), TaskListFragment.TouchActionDelegate {
+class NavigationActivity : AppCompatActivity(), TaskListFragment.TouchActionDelegate, NotesListFragment.TouchActionDelegate {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,11 +27,19 @@ class NavigationActivity : AppCompatActivity(), TaskListFragment.TouchActionDele
         NavigationUI.setupWithNavController(navView, navController)
     }
 
-    private fun goToCreateActivity(){
-        startActivity(Intent(this, CreateActivity::class.java))
+    private fun goToCreateActivity(fragmentValue: String){
+        startActivity(Intent(this, CreateActivity::class.java).apply {
+            putExtra(FRAGMENT_TYPE_KEY, fragmentValue)
+        })
     }
-    override fun onAddButtonClicked() {
-        goToCreateActivity()
+    override fun onAddButtonClicked(value: String) {
+        goToCreateActivity(value)
+    }
+
+    companion object{
+        const val FRAGMENT_TYPE_KEY = "f_t_k"
+        const val FRAGMENT_TYPE_NOTE = "f_t_n"
+        const val FRAGMENT_TYPE_TASK = "f_t_t"
     }
 
 }
