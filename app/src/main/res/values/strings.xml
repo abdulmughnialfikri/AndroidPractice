@@ -4,4 +4,6 @@
     <string name="title_activity_navigation">NavigationActivity</string>
     <string name="title_task">Task</string>
     <string name="title_notes">Notes</string>
+    <string name="add_button_task">Add Task</string>
+    <string name="add_button_note">Add Note</string>
 </resources>
