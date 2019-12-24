@@ -11,7 +11,8 @@ import personal.abdulmughniaf.androidpractice.models.Task
 import personal.abdulmughniaf.androidpractice.view.TaskView
 
 class TaskAdapter (
-        taskList: MutableList<Task> = mutableListOf()
+        taskList: MutableList<Task> = mutableListOf(),
+        val touchActionDelegate: TaskListFragment.TouchActionDelegate
 ): BaseRecyclerAdapter<Task>(taskList){
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder = if (viewType == TYPE_INFO) {
             TaskViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.item_task, parent, false))
@@ -25,9 +26,13 @@ class TaskAdapter (
         }
     }
 
-    class AddButtonViewHolder(view: View) : BaseRecyclerAdapter.AddButtonViewHolder(view){
+    inner class AddButtonViewHolder(view: View) : BaseRecyclerAdapter.AddButtonViewHolder(view){
         override fun onBind(data: Unit) {
             view.buttonText.text = view.context.getString(R.string.add_button_task)
+
+            view.setOnClickListener {
+                touchActionDelegate.onAddButtonClicked()
+            }
         }
     }
 

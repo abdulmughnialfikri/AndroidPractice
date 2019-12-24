@@ -7,13 +7,13 @@
 
     <fragment
         android:id="@+id/navigation_task"
-        android:name="personal.abdulmughniaf.androidpractice.ui.task.TaskFragment"
+        android:name="personal.abdulmughniaf.androidpractice.ui.task.TaskListFragment"
         android:label="@string/title_task"
         tools:layout="@layout/fragment_task" />
 
     <fragment
         android:id="@+id/navigation_notes"
-        android:name="personal.abdulmughniaf.androidpractice.ui.notes.NotesFragment"
+        android:name="personal.abdulmughniaf.androidpractice.ui.notes.NotesListFragment"
         android:label="@string/title_notes"
         tools:layout="@layout/fragment_notes" />
 

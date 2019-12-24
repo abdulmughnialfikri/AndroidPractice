@@ -17,7 +17,7 @@ import kotlinx.android.synthetic.main.fragment_task.recyclerView
 import personal.abdulmughniaf.androidpractice.R
 import personal.abdulmughniaf.androidpractice.models.Note
 
-class NotesFragment : Fragment() {
+class NotesListFragment : Fragment() {
 
     private var notesViewModel: NotesViewModel? = null
 
